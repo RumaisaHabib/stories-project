@@ -40,9 +40,19 @@ INSTALLED_APPS = [
     'leads',
     'rest_framework',
     'frontend',
+    'corsheaders'
 ]
 
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000',]
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

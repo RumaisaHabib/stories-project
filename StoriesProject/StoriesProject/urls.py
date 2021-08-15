@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from rest_framework import routers 
 from frontend.views import index
+from frontend import views
+
+router = routers.DefaultRouter()                   
+router.register(r'stories', views.StoryView, 'stories') 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
     path(r'about/', index),
     re_path(r'stories/.*/', index),
     path('', index),

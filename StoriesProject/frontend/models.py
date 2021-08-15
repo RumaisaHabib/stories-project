@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Story(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=500, blank=True)
+    story = models.CharField(max_length=2000)
