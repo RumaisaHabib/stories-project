@@ -17,6 +17,6 @@ and delete node-modules and package-lock.json if they are present.
 Now open <code>http://127.0.0.1:8000</code> on your browser to view the website.
 
 <h2>Adding/removing stories</h2>
-When you first deploy, there will be no stories. To add a story, first create a superuser for yourself by running 
+To add a story, first create a superuser for yourself by running 
 <code>python3 manage.py createsuperuser</code> and create login details. Then deploy the website and open <code>http://127.0.0.1:8000/admin</code> on your browser. Log in with the credentials you just created. 
 Now click on 'Storys' under 'Frontend' and add/delete stories to/from your website as you wish.
