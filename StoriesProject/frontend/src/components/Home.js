@@ -24,25 +24,29 @@ const Home = () =>
         getData()
       },[])
 
+    const story_content = stories.map((item)=>
+    <div className="row" key={item.id}>    
+        <div className="col s8 offset-s2">
+            <div className="card teal darken-2 center">
+                <div className="card-content white-text lighten-2 z-depth-4">
+                    <h3 className="card-title" >{item.name}</h3>
+                    <p>{item.description}</p>
+                </div>
+                <div className="card-action">
+                    <Link to={{ 
+                                pathname: "/stories/" + item.id + '/',
+                            }} >READ MORE</Link>
+                </div>
+            </div>
+        </div>
+    </div>)
+
+    const no_content = <div className="center">No stories available</div>
+    const content = stories.length===0 ? no_content : story_content
     return(
         <div className="container">
             <h4 className="center" color="black">Home</h4>
-            {stories.map((item)=>
-            <div className="row" key={item.id}>    
-                <div className="col s8 offset-s2">
-                    <div className="card teal darken-2 center">
-                        <div className="card-content white-text lighten-2 z-depth-4">
-                            <h3 className="card-title" >{item.name}</h3>
-                            <p>{item.description}</p>
-                        </div>
-                        <div className="card-action">
-                            <Link to={{ 
-                                        pathname: "/stories/" + item.id + '/',
-                                    }} >READ MORE</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>)}
+            {content}
         </div>
     )
 }

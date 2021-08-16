@@ -35,8 +35,8 @@ const Stories = (props) =>
       },[])
 
     const post = myStory ? (<div><h4 className="center" color= "black">{myStory.name}</h4> 
-    <p>{myStory.story}</p></div>) : (<p>Loading</p>)
-    const err_msg = <div><h4>404: NOT FOUND</h4></div>
+    <p style={{ whiteSpace: 'break-spaces' }}>{myStory.story}</p></div>) : (<p>Loading</p>)
+    const err_msg = <div><h4 className="center">404: NOT FOUND</h4></div>
     const content = err ? (err_msg) : (post)
 
     return(
