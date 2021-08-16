@@ -9,7 +9,7 @@ cd ..
 python3 manage.py runserver
 </code></pre> 
 
-Note: if <code>npm run dev fails</code>, do the following before <code>npm run install</code>:
+Note: if <code>npm run dev</code> fails, do the following before <code>npm run install</code>:
 <pre><code>npm cache clean --force
 </code></pre> 
 and delete node-modules and package-lock.json if they are present.
